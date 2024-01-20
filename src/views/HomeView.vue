@@ -1,5 +1,7 @@
+<script setup>
+import Button from 'primevue/button';
+</script>
+
 <template>
-  <main>
-    <h1 class="text-3xl font-bold underline">Parasite Hunters</h1>
-  </main>
+  <Button label="Okay" icon="pi pi-check" severity="success" />
 </template>

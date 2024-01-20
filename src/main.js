@@ -1,14 +1,18 @@
-import './assets/main.css'
+import 'primeicons/primeicons.css';
+import 'primevue/resources/themes/lara-dark-teal/theme.css';
+import './assets/main.css';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import Lara from '@/presets/lara';
+import { createPinia } from 'pinia';
+import PrimeVue from 'primevue/config';
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-import App from './App.vue'
-import router from './router'
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia());
+app.use(router);
+app.use(PrimeVue, { ripple: true, pt: Lara });
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+app.mount('#app');
