@@ -1,5 +1,7 @@
 <script setup>
+import Toast from 'primevue/toast';
 import { RouterView } from 'vue-router';
+const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -15,6 +17,8 @@ import { RouterView } from 'vue-router';
 
     <main class="p-8">
       <RouterView />
+
+      <Toast />
     </main>
 
     <footer class="p-4 mt-auto text-center">

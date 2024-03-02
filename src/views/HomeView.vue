@@ -1,7 +1,7 @@
 <script setup>
-import Button from 'primevue/button';
+import ImagePicker from '@/components/ImagePicker.vue';
 </script>
 
 <template>
-  <Button label="Okay" icon="pi pi-check" severity="success" />
+  <ImagePicker @hunt="console.log" />
 </template>
