@@ -17,7 +17,10 @@ export const useApiStore = defineStore('api', () => {
           },
           body: image
         });
-        if (response.status != 200) throw 'Server Error';
+        if (response.status != 200) {
+          console.log(await response.json())
+          throw 'Server Error';
+        }
         resolve(await response.json());
       } catch (error) {
         const detail =

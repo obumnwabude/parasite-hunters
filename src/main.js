@@ -15,7 +15,7 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-app.use(PrimeVue, { ripple: true, pt: Lara });
+app.use(PrimeVue, { ripple: true });
 app.use(ToastService);
 
 if (!import.meta.env.DEV) {

@@ -1,4 +1,5 @@
 <script setup>
+import Chat from '@/components/Chat.vue';
 import ImagePicker from '@/components/ImagePicker.vue';
 import { useApiStore } from '@/stores/api';
 import { useToast } from 'primevue/usetoast';
@@ -11,6 +12,7 @@ const toast = useToast();
 const hunt = async (image) => {
   isHunting.value = true;
   const result = await api.predict(image);
+  console.log(result);
   if (result) {
     if ('predictions' in result) {
       predictions.value = result.predictions;
@@ -44,7 +46,9 @@ const predictions = ref([]);
     <div></div>
   </div>
 
-  <div
+  <Chat />
+
+  <!-- <div
     :class="
       'mb-20 md:flex ' + (predictions.length == 0 ? 'justify-center' : '')
     "
@@ -71,7 +75,7 @@ const predictions = ref([]);
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style>
